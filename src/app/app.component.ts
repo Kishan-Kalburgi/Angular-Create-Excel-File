@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from './common/data.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'testapp';
+
+  constructor(private service: DataService) { }
+
+  callMyFunc() {
+    this.service.generateXLSX();
+  }
 }
